@@ -1,3 +1,1 @@
-Test
-Cookie Clicker prosekt
-Hello
+Cookie Clicker
