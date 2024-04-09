@@ -8,13 +8,29 @@ h1 {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 .click_container {
-  background-color: rgb(223, 161, 81);
-  width:25%;
-  height:1000px;
-  overflow:auto;
+  background-image: url("img/bg_dirt.jpg");
+  width: 25%;
+  height: 1300px;
   padding: 10px;
   position: relative;
   display: flex;
   z-index: 1;
+}
+
+.click_container img {
+ position: absolute;
+ margin: 25%;
+ height: 100%;
+ width: 50%;
+}
+
+.score_container {
+  margin-left: 25%;
+  background-color: antiquewhite;
+  height: fit-content;
+  width: auto;
+  padding: 1%;
+  border-style: solid;
 }
