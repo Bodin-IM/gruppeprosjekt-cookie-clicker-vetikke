@@ -10,9 +10,9 @@ h1 {
 
 
 .click_container {
-  background-color: rgb(221, 178, 121);
-  width:25%;
-  height:1000px;
+  background-image: url("img/bg_dirt.jpg");
+  width: 25%;
+  height: 1300px;
   padding: 10px;
   position: relative;
   display: flex;
@@ -20,6 +20,17 @@ h1 {
 }
 
 .click_container img {
- height: 50%;
+ position: absolute;
+ margin: 25%;
+ height: 100%;
  width: 50%;
+}
+
+.score_container {
+  margin-left: 25%;
+  background-color: antiquewhite;
+  height: fit-content;
+  width: auto;
+  padding: 1%;
+  border-style: solid;
 }
