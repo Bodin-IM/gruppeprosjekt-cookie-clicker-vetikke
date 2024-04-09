@@ -10,12 +10,16 @@ h1 {
 
 
 .click_container {
-  background-color: rgb(223, 161, 81);
+  background-color: rgb(221, 178, 121);
   width:25%;
   height:1000px;
-  overflow:auto;
   padding: 10px;
   position: relative;
   display: flex;
   z-index: 1;
+}
+
+.click_container img {
+ height: 50%;
+ width: 50%;
 }
