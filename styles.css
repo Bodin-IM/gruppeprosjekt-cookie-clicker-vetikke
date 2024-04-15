@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(231, 231, 231);
+    padding: 0%;
+    margin: 0%;
+  }
+
+h1 {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.click_container {
+  background-image: url("img/bg_dirt.jpg");
+  width: 25%;
+  height: 1300px;
+  padding: 10px;
+  position: relative;
+  display: flex;
+  z-index: 1;
+}
+
+.click_container img {
+ position: absolute;
+ margin: 25%;
+ height: 100%;
+ width: 50%;
+}
+
+.score_container {
+  margin-left: 25%;
+  background-color: antiquewhite;
+  height: fit-content;
+  width: auto;
+  padding: 1%;
+  border-style: solid;
+}
