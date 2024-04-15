@@ -1,0 +1,36 @@
+.container {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .toppane {
+    width: 100%;
+    height: 100px;
+    background-color: powderblue;
+  }
+  
+  .leftpane {
+    width: 25%;
+    height: 100vh;
+    background-color: whitesmoke;
+  }
+  
+  .middlepane {
+    width: 50%;
+    height: 100vh;
+    background-color: wheat
+  }
+  
+  .rightpane {
+    width: 25%;
+    height: 100vh;
+    background-color: gray;
+  }
+  
+  body {
+    margin: 0!important;
+  }
+  
+  .d-flex {
+    display: flex;
+  }
