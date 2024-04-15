@@ -1,47 +1,69 @@
 body {
-    background-color: rgb(161, 161, 161);
+    background-image: url("img/bg_dirt.jpeg");
     padding: 0%;
     margin: 0%;
-  }
+}
 
 h1 {
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.score_container {
+  background-color: antiquewhite;
+  height: fit-content;
+  width: 100%;
+  padding: 1%;
+  outline: double;
+  outline-width: 10px;
+  outline-color: antiquewhite;
+}
 
 .click_container {
-  background-image: url("img/bg_dirt.jpg");
-  width: 25%;
-  height: 1200px;
-  padding: 10px;
-  position: relative;
-  display: flex;
-  z-index: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 25%;
+    height: 1000px;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    z-index: 1;
+    outline: groove;
+    outline-width: 10px;
+    outline-color: antiquewhite;
 }
 
 .click_container img {
+ opacity: 1;
  position: absolute;
  margin: 25%;
- height: 100%;
+ height: auto;
  width: 50%;
+
 }
 
-.score_container {
-  margin-left: 25%;
-  background-color: antiquewhite;
-  height: fit-content;
-  width: auto;
-  padding: 1%;
-  border-style: solid;
+.click_container img:active {
+    animation-name: cookie_click;
+    animation-duration: 0.5s;
+   
 }
 
-footer {
-  background-color: white;
-  max-width: 100%;
-  padding: 0%;
-  margin: -1%;
-  height: auto;
-  position: relative;
-  z-index: 2;
+@keyframes cookie_click {
+    0% {
+        width: 50%;
+    }
 
+    50% {
+        width: 55%;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+.div_store {
+    position: relative;
+    float: right;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px;
 }
