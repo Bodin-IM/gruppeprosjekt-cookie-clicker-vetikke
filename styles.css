@@ -1,11 +1,9 @@
 body {
     background-image: url("img/bg_dirt.jpeg");
+    background-size: cover;
     padding: 0%;
     margin: 0%;
-}
-
-h1 {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .score_container {
@@ -65,5 +63,32 @@ h1 {
     float: right;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    padding: 15px;
+    padding: 10px;
+    bottom: 1020px;
 }
+
+.store_upgrades {
+    position: relative;
+
+}
+
+    .store_upgrades img {
+        width: 10%;
+    }
+
+.upgrade_bar {
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+    .upgrade_bar:hover {
+        width: 100%;
+        background-color: rgba(250, 230, 210, 0.6);
+        
+    }
+
+    .upgrade_bar h2 {
+        padding-left: 25px;
+    }
