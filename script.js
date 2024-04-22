@@ -5,6 +5,12 @@ var uranium = document.getElementById('click_image')
 var EL_score = document.getElementById('score')
 
 // Purchase Items
+// Upgrade Tier
+var upgrade_tier = document.getElementById('upgrade_tier')
+var upgrade_tier_cost = 5000
+var div_store_text = document.getElementById('div_store_text')
+var tier = 0 // 0 = Dirt, 1 = Stone, etc...
+
 // Upgrade Tool
 var upgrade_tool = document.getElementById('upgrade_tool')
 var upgrade_tool_text = document.getElementById('upgrade_tool_text')
@@ -26,7 +32,17 @@ function click_main() {
  
 uranium.addEventListener('click', click_main)
 
-// Store [TIER I]
+// Store
+function purchase_upgrade_tier() {
+    if (score >= upgrade_tier_cost) {
+        score = score - upgrade_tier_cost
+        tier = tier + 1
+        tiers()
+    }
+
+}
+
+// Store [TIER I: DIRT]
 // Upgrade Tool
 function purchase_upgrade_tool() {
     if (score >= upgrade_tool_cost) {
@@ -56,8 +72,17 @@ function hire_worker_auto() {
     score += score_persec
     EL_score.innerHTML = "Mined / Score: " + score
 }
-
 setInterval(hire_worker_auto, 1000)
 
+upgrade_tier.addEventListener('click', purchase_upgrade_tier)
 upgrade_tool.addEventListener('click', purchase_upgrade_tool)
 hire_worker.addEventListener('click', purchase_hire_worker)
+
+function tiers() {
+    if (tier = 1) {
+        document.body.style.backgroundImage = "url('img/background_stone.png')";
+        document.getElementById(uranium).src = "url('img/stone_512.png')";
+        div_store_text.innerHTML = "Store / Upgrades" < br > "Tier II: Stone"
+        EL_score.innerHTML = "Mined / Score: " + score
+    }
+}
