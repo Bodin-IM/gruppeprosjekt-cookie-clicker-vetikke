@@ -1,8 +1,14 @@
 body {
+
+    display: flex;
+    flex-direction: row;
+
     background-image: url("img/bg_dirt.jpeg");
     background-size: cover;
     padding: 0%;
     margin: 0%;
+    height: 100%;
+    overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     -webkit-touch-callout: none;
@@ -14,66 +20,132 @@ body {
 
 }
 
+/* SCROLL BAR copy n paste cuz why not */
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 0px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: lightgrey;
+    }
+
+
+
+
+.center_div {
+    /* z-index: 2;*/
+
+    background-color: rgba(0, 0, 0, 0.7);
+    outline: groove;
+    outline-width: 10px;
+    outline-color: white;
+    padding: 10px;
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
 .score_container {
-  background-color: antiquewhite;
-  height: fit-content;
-  width: 100%;
-  padding: 1%;
-  outline: double;
-  outline-width: 10px;
-  outline-color: antiquewhite;
+    background-color: lightgrey;
+    height: fit-content;
+    width: 100%;
+    padding: 1%;
+    outline: double;
+    outline-width: 10px;
+    outline-color: white;
 }
 
 .click_container {
-    background-color: rgba(0, 0, 0, 0.6);
+
+    background-color: rgba(0, 0, 0, 0.7);
     width: 25%;
-    height: 1000px;
     padding: 10px;
     position: relative;
     display: flex;
     z-index: 1;
     outline: groove;
     outline-width: 10px;
-    outline-color: antiquewhite;
+    outline-color: white;
+    place-content: center;   
+    height: 100vh;
+    overflow: hidden;
 }
 
-.click_container img {
- opacity: 1;
- position: absolute;
- margin: 25%;
- height: auto;
- width: 50%;
+#click_image {
 
+    opacity: 1;
+    position: absolute;
+    transform: scale(0.5);
 }
 
-.click_container img:active {
+#click_image:active {
     animation-name: cookie_click;
-    animation-duration: 0.5s;
-   
+    animation-duration: 0.2s;
 }
 
 @keyframes cookie_click {
     0% {
-        width: 50%;
+       transform: scale(0.5);
     }
 
     50% {
-        width: 55%;
+        transform: scale(0.45);
     }
 
     100% {
-        width: 50%;
+        transform: scale(0.5);
     }
 }
 
+.upgrade_bar {
+
+    transition: all 0.25s;
+}
+
+.upgrade_bar:hover {
+    right: -5px;
+    transition: all 0.25s;
+}
+
+
 .div_store {
     z-index: 5;
-    position: relative;
-    float: right;
-    background-color: rgba(0, 0, 0, 0.8);
+   
+    right: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
     padding: 10px;
-    bottom: 1020px;
+    bottom: auto;
+    max-width: 23%;
+    width: 23%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    outline: ridge;
+    outline-width: 10px;
+    outline-color: white;
 }
 
 .store_upgrades {
@@ -108,5 +180,15 @@ body {
         color: black;
     }
 
+#upgrade_tool_tier2 {
+    visibility: hidden;
+}
+#hire_worker_tier3 {
+    visibility: hidden;
+}
+#upgrade_tool_tier3 {
+    visibility: hidden;
+}
 
 }
+
