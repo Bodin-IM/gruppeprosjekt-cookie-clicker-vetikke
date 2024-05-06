@@ -1,36 +1,125 @@
 body {
-    background-color: rgb(231, 231, 231);
-    padding: 0%;
-    margin: 0%;
-  }
+  background-image: url("img/bg_dirt.jpeg");
+  background-size: cover;
+  padding: 0%;
+  margin: 0%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-h1 {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
 }
 
+.score_container {
+background-color: antiquewhite;
+height: fit-content;
+width: 100%;
+padding: 1%;
+outline: double;
+outline-width: 10px;
+outline-color: antiquewhite;
+}
 
 .click_container {
-  background-image: url("img/bg_dirt.jpg");
+  background-color: rgba(0, 0, 0, 0.6);
   width: 25%;
-  height: 1300px;
+  height: 1000px;
   padding: 10px;
   position: relative;
   display: flex;
   z-index: 1;
+  outline: groove;
+  outline-width: 10px;
+  outline-color: antiquewhite;
 }
 
 .click_container img {
- position: absolute;
- margin: 25%;
- height: 100%;
- width: 50%;
+opacity: 1;
+position: absolute;
+margin: 25%;
+height: auto;
+width: 50%;
+
 }
 
-.score_container {
-  margin-left: 25%;
-  background-color: antiquewhite;
-  height: fit-content;
-  width: auto;
-  padding: 1%;
-  border-style: solid;
+.click_container img:active {
+  animation-name: cookie_click;
+  animation-duration: 0.5s;
+ 
+}
+
+@keyframes cookie_click {
+  0% {
+      width: 50%;
+  }
+
+  50% {
+      width: 55%;
+  }
+
+  100% {
+      width: 50%;
+  }
+}
+
+.div_store {
+  position: relative;
+  float: right;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  bottom: 1020px;
+
+}
+
+.store_upgrades {
+  position: relative;
+
+}
+
+  .store_upgrades img {
+      width: 10%;
+  }
+
+.upgrade_bar {
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+  .upgrade_bar:hover {
+      width: 100%;
+      background-color: rgba(250, 230, 210, 0.6);
+      
+  }
+
+  .upgrade_bar h2 {
+      padding-left: 25px;
+  }
+
+  #upgrade_tier:hover {
+      -webkit-animation: glowing 1s infinite;
+      animation-timing-function: ease-in-out;
+  }
+
+@-webkit-keyframes glowing {
+  0% {
+      background-color: transparent;
+      -webkit-box-shadow: 0 0 0px gold;
+  }
+
+  50% {
+      background-color: gold;
+      -webkit-box-shadow: 0 0 25px gold;
+  }
+
+  100% {
+      background-color: transparent;
+      -webkit-box-shadow: 0 0 0px gold;
+  }
 }
