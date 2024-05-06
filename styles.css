@@ -1,5 +1,5 @@
 body {
-  background-image: url("img/bg_dirt.jpeg");
+  background-image: url("img/bg_dirt.jpg");
   background-size: cover;
   padding: 0%;
   margin: 0%;
@@ -17,7 +17,7 @@ outline-color: antiquewhite;
 }
 
 .click_container {
-  background-image: url("img/bg_dirt.jpg");
+  background-image: url("img/mining mineral\ dirt\ backround.png");
   background-color: rgba(0, 0, 0, 0.6);
   width: 25%;
   height: 1000px;
