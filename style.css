@@ -34,3 +34,9 @@
   .d-flex {
     display: flex;
   }
+
+  .topright {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
