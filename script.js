@@ -1,8 +1,11 @@
+// Spagh    etti code is real
+console.log("The Spaghetti Code is real!!!")
 var score = Math.round(0)
- 
 
-var uranium = document.getElementById('click_image')
-var EL_score = document.getElementById('score')
+
+
+var uranium = document.getElementById('click_image');
+var EL_score = document.getElementById('score');
 
 ///////////////////////////////////////////////////////////////////// Purchase Items
 // Upgrade Tier
@@ -38,11 +41,30 @@ var hire_worker_tier3_text = document.getElementById('hire_worker_tier3_text')
 var hire_worker_tier3_cost = Math.round(85)
 var score_persec_tier3 = Math.round(0)
 
+const createParticle = (x, y) => {
+    const imageClicks = document.querySelector(".click_container");
+    const particle = document.createElement("img");
+    particle.setAttribute("src", "img/particle.png")
+    particle.setAttribute("class", "particle")
+    particle.style.left = Math.floor(Math.random() * 190) + 140 + "px";
+    particle.style.top = Math.floor(Math.random() * 400) + 400 + "px";
+    particle.style.width ="100px";
+    particle.style.height = "100px";
+    particle.style.position = "absolute";
+    imageClicks.appendChild(particle);
+
+    setTimeout(() => {
+        imageClicks.removeChild(particle);
+    }, 3000);
+}
+
 function click_main() {
+    createParticle(200,500);
     score = score + Math.round(1 * tool_eff)
     EL_score.innerHTML = "Mined / Score: " + score
-}
  
+}
+
 uranium.addEventListener('click', click_main)
 
 ///////////////////////////////      Store        /////////////////////////////////// 
@@ -85,13 +107,14 @@ function hire_worker_auto() {
     score += score_persec
     score += score_persec_tier3
     EL_score.innerHTML = "Mined / Score: " + score
+
 }
 setInterval(hire_worker_auto, 1000)
 
 upgrade_tier.addEventListener('click', purchase_upgrade_tier)
 upgrade_tool.addEventListener('click', purchase_upgrade_tool)
 hire_worker.addEventListener('click', purchase_hire_worker)
-hire_volunteer.addEventListener('click', purchase_hire_volunteer)
+// hire_volunteer.addEventListener('click', purchase_hire_volunteer)
 /////////////////////////////// Tier II ///////////////////////////////
 function purchase_upgrade_tool_tier2() {
     if (score >= upgrade_tool_tier2_cost) {
@@ -115,6 +138,18 @@ function purchase_hire_worker_tier3() {
     }
     EL_score.innerHTML = "Mined / Score: " + score
     hire_worker_tier3_text.innerHTML = "Hire Worker Tier III (" + score_persec_tier3 + " / Second)" + "<br>Cost: " + hire_worker_tier3_cost
+}
+
+
+function purchase_upgrade_tool_tier3() {
+    if (score >= upgrade_tool_tier3_cost) {
+        score = score - upgrade_tool_tier3_cost
+        tool_eff_tier = tool_eff_tier + 0.78
+        console.log("Tool Eff.: " + tool_eff_tier)
+        upgrade_tool_tier3_cost = upgrade_tool_tier3_cost + 8
+    }
+    EL_score.innerHTML = "Mined / Score: " + score
+
 }
 
 hire_worker_tier3.addEventListener('click', purchase_hire_worker_tier3)
@@ -158,3 +193,7 @@ function tiers() {
         upgrade_tier_text.innerHTML = "Upgrade to Tier VI: Placeholder<br>Cost: " + upgrade_tier_cost
     }
 }
+
+
+// Whats happens when you snap spaghetti in half? You get messsy spaghetti, and the code is a messy spaghetti
+ 

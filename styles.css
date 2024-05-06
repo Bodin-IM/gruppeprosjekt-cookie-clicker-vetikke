@@ -50,19 +50,42 @@ body {
 .center_div {
     /* z-index: 2;*/
 
-    background-color: rgba(0, 0, 0, 0.7);
-    outline: groove;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* outline: groove;
     outline-width: 10px;
-    outline-color: white;
+    outline-color: white; */
     padding: 10px;
     overflow: hidden;
     margin: auto;
-    display: flex;
+    /*display: flex;*/
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    width: 50vw;
+    flex-direction: column;
+
 }
 
+.cdiv_tile {
+    margin-top: 10px;
+    top: 100px;
+    height: 15%;
+    width: 100vw;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    outline: groove;
+    outline-width: 10px;
+    outline-color: white;
+}
 
+#cdiv_tile1 {
+    /*background-image: url('img/tile/tier1.jpg');*/
+}
+
+#cdiv_tile2 {
+    /*background-image: url('img/tile/tier2.jpg');*/
+}
 
 
 .score_container {
@@ -92,41 +115,55 @@ body {
 }
 
 #click_image {
-
     opacity: 1;
     position: absolute;
-    transform: scale(0.5);
+    scale: 0.5;
+    animation: rotate 100s linear infinite;
+    transition: all 0.1s;
 }
 
-#click_image:active {
-    animation-name: cookie_click;
-    animation-duration: 0.2s;
-}
+    #click_image:active {
+        scale: 0.45;
 
-@keyframes cookie_click {
-    0% {
-       transform: scale(0.5);
     }
 
-    50% {
-        transform: scale(0.45);
-    }
 
-    100% {
-        transform: scale(0.5);
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }
+ 
 
 .upgrade_bar {
-
     transition: all 0.25s;
+    /* animation-name: upgrade_bar_idle;
+    animation-duration: 4s;
+    animation-iteration-count: infinite; */
 }
 
 .upgrade_bar:hover {
-    right: -5px;
+    scale: 105%;
     transition: all 0.25s;
+    /* animation-name: none; */
 }
 
+@keyframes upgrade_bar_idle {
+    0% {
+        transform: translate(0px,0px);
+    }
+
+    50% {
+        transform: translate(10px,0px);
+    }
+
+    100% {
+        transform: translate(0px,0px);
+    }
+}
 
 .div_store {
     z-index: 5;
@@ -190,5 +227,24 @@ body {
     visibility: hidden;
 }
 
+
+.particle {
+
+    width: 10px;
+    height: 10px;
+    position: relative;
+    pointer-events: none;
+    animation: particle-up 3s linear forwards;
+
 }
 
+@keyframes particle-up {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        top: 0;
+    }
+}
