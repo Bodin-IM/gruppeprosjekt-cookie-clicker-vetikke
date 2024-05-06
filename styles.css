@@ -4,14 +4,6 @@ body {
   padding: 0%;
   margin: 0%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
 }
 
 .score_container {
@@ -25,6 +17,7 @@ outline-color: antiquewhite;
 }
 
 .click_container {
+  background-image: url("img/bg_dirt.jpg");
   background-color: rgba(0, 0, 0, 0.6);
   width: 25%;
   height: 1000px;
@@ -106,20 +99,3 @@ width: 50%;
       -webkit-animation: glowing 1s infinite;
       animation-timing-function: ease-in-out;
   }
-
-@-webkit-keyframes glowing {
-  0% {
-      background-color: transparent;
-      -webkit-box-shadow: 0 0 0px gold;
-  }
-
-  50% {
-      background-color: gold;
-      -webkit-box-shadow: 0 0 25px gold;
-  }
-
-  100% {
-      background-color: transparent;
-      -webkit-box-shadow: 0 0 0px gold;
-  }
-}
