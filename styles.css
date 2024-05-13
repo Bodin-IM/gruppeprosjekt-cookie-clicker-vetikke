@@ -4,6 +4,9 @@ body {
   padding: 0%;
   margin: 0%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .score_container {
@@ -22,8 +25,9 @@ outline-color: antiquewhite;
   width: 25%;
   height: 1000px;
   padding: 10px;
-  position: relative;
+  
   display: flex;
+  flex-direction: column;
   z-index: 1;
   outline: groove;
   outline-width: 10px;
@@ -32,10 +36,10 @@ outline-color: antiquewhite;
 
 .click_container img {
 opacity: 1;
-position: absolute;
-margin: 25%;
-height: auto;
-width: 50%;
+width: 100%;
+height: 60%;
+
+
 
 }
 
@@ -47,26 +51,88 @@ width: 50%;
 
 @keyframes cookie_click {
   0% {
-      width: 50%;
+      width: 101%
   }
 
   50% {
-      width: 55%;
+      width: 99%;
   }
 
   100% {
-      width: 50%;
+      width: 100%;
+  }
+}
+
+body {
+  background-image: url("img/bg_dirt.jpg");
+  background-size: cover;
+  padding: 0%;
+  margin: 0%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.score_container {
+background-color: antiquewhite;
+height: fit-content;
+width: 100%;
+padding: 1%;
+outline: double;
+outline-width: 10px;
+outline-color: antiquewhite;
+}
+
+.click_container {
+  background-image: url("img/mining mineral\ dirt\ backround.png");
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 25%;
+  height: 1000px;
+  padding: 10px;
+  
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  outline: groove;
+  outline-width: 10px;
+  outline-color: antiquewhite;
+}
+
+.click_container img {
+opacity: 1;
+width: 100%;
+height: 60%;
+
+
+
+}
+
+.click_container img:active {
+  animation-name: cookie_click;
+  animation-duration: 0.5s;
+ 
+}
+
+@keyframes cookie_click {
+  0% {
+      width: 101%
+  }
+
+  50% {
+      width: 99%;
+  }
+
+  100% {
+      width: 100%;
   }
 }
 
 .div_store {
-  position: relative;
-  float: right;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 10px;
-  bottom: 1020px;
-
+  width: 500px;
 }
 
 .store_upgrades {
@@ -75,20 +141,19 @@ width: 50%;
 }
 
   .store_upgrades img {
-      width: 10%;
+      width: 140px;
+      height: 100px;
   }
 
 .upgrade_bar {
-  position: relative;
-  align-items: center;
   display: flex;
+  align-items: center;
   flex-direction: row;
 }
 
   .upgrade_bar:hover {
       width: 100%;
       background-color: rgba(250, 230, 210, 0.6);
-      
   }
 
   .upgrade_bar h2 {
