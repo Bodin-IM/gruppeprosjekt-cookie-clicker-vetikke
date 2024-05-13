@@ -1,8 +1,6 @@
 // Spagh    etti code is real
 console.log("The Spaghetti Code is real!!!")
-var score = Math.round(0)
-
-
+var score = 0
 
 var uranium = document.getElementById('click_image');
 var EL_score = document.getElementById('score');
@@ -33,6 +31,10 @@ var upgrade_tool_tier2_text = document.getElementById('upgrade_tool_tier2_text')
 var upgrade_tool_tier2_cost = Math.round(50)
 var tool_eff_tier2 = 1
 
+var hire_worker_tier2 = document.getElementById('hire_worker_tier2')
+var hire_worker_tier2_text = document.getElementById('hire_worker_tier2_text')
+var hire_worker_tier2_cost = Math.round(85)
+var score_persec_tier2 = Math.round(0)
 
 /////////////////////////   Purchase Items Tier III    //////////////////// 
 // Hire Workers
@@ -57,15 +59,18 @@ const createParticle = (x, y) => {
         imageClicks.removeChild(particle);
     }, 3000);
 }
-
+function makeitrain() {
+    partmoney_timer = partmoney_timer - 5
+    MoneyTime = setInterval(createParticleMoney, partmoney_timer)
+}
 function click_main() {
     createParticle(200,500);
     score = score + Math.round(1 * tool_eff)
     EL_score.innerHTML = "Mined / Score: " + score
- 
 }
 
 uranium.addEventListener('click', click_main)
+
 
 ///////////////////////////////      Store        /////////////////////////////////// 
 function purchase_upgrade_tier() {
@@ -85,6 +90,7 @@ function purchase_upgrade_tool() {
         tool_eff = tool_eff + 0.25
         console.log("Tool Eff.: " + tool_eff)
         upgrade_tool_cost = upgrade_tool_cost + 8
+
     }
     EL_score.innerHTML = "Mined / Score: " + score
     upgrade_tool_text.innerHTML = "Upgrade Tool Efficiency (" + tool_eff + ")" + "<br>Cost: " + upgrade_tool_cost
@@ -98,9 +104,15 @@ function purchase_hire_worker() {
         score_persec = score_persec + 1
         console.log("Score persec.: " + score_persec)
         hire_worker_cost = hire_worker_cost + 8
+        var img = new Image();
+        img.src = 'img/miner.png';
+        document.getElementById("cdiv_tile1").appendChild(img);
+        makeitrain();
+
     }
     EL_score.innerHTML = "Mined / Score: " + score
     hire_worker_text.innerHTML = "Hire Worker (" + score_persec + " / Second)" + "<br>Cost: " + hire_worker_cost
+
 }
 
 function hire_worker_auto() {
@@ -126,6 +138,24 @@ function purchase_upgrade_tool_tier2() {
     EL_score.innerHTML = "Mined / Score: " + score
 
 }
+
+function purchase_hire_worker_tier2() {
+    if (score >= hire_worker_tier3_cost) {
+        score = score - hire_worker_tier2_cost
+        score_persec_tier2 = score_persec_tier2 + 2.5
+        console.log("Score persec.: " + score_persec_tier2)
+        hire_worker_tier2_cost = hire_worker_tier2_cost + 8
+        var img = new Image();
+        img.src = 'img/demo.png';
+        document.getElementById("cdiv_tile2").appendChild(img);
+
+        makeitrain();
+    }
+    EL_score.innerHTML = "Mined / Score: " + score
+    hire_worker_tier2_text.innerHTML = "Hire Demolition Specialist (" + score_persec_tier2 + " / Second)" + "<br>Cost: " + hire_worker_tier2_cost
+}
+
+hire_worker_tier2.addEventListener('click', purchase_hire_worker_tier2)
 upgrade_tool_tier2.addEventListener('click', purchase_upgrade_tool_tier2)
 
 /////////////////////////////// Tier III ///////////////////////////////
@@ -135,6 +165,10 @@ function purchase_hire_worker_tier3() {
         score_persec_tier3 = score_persec_tier3 + 4
         console.log("Score persec.: " + score_persec_tier3)
         hire_worker_tier3_cost = hire_worker_tier3_cost + 13
+        var img = new Image();
+        img.src = 'img/miner.png';
+        document.getElementById("cdiv_tile1").appendChild(img);
+        makeitrain();
     }
     EL_score.innerHTML = "Mined / Score: " + score
     hire_worker_tier3_text.innerHTML = "Hire Worker Tier III (" + score_persec_tier3 + " / Second)" + "<br>Cost: " + hire_worker_tier3_cost
@@ -147,6 +181,7 @@ function purchase_upgrade_tool_tier3() {
         tool_eff_tier = tool_eff_tier + 0.78
         console.log("Tool Eff.: " + tool_eff_tier)
         upgrade_tool_tier3_cost = upgrade_tool_tier3_cost + 8
+
     }
     EL_score.innerHTML = "Mined / Score: " + score
 
@@ -167,6 +202,7 @@ function tiers() {
         div_store_text.innerHTML = "Store / Upgrades <br>Tier II: Stone"
         upgrade_tier_text.innerHTML = "Upgrade to Tier III: Iron<br>Cost: " + upgrade_tier_cost
         document.getElementById('upgrade_tool_tier2').style.visibility = 'visible';
+        document.getElementById('hire_worker_tier2').style.visibility = 'visible';
     }
 
     if(tier == 2) {
@@ -195,5 +231,24 @@ function tiers() {
 }
 
 
-// Whats happens when you snap spaghetti in half? You get messsy spaghetti, and the code is a messy spaghetti
- 
+
+const createParticleMoney = (x, y) => {
+    const imageClicks = document.querySelector(".click_container");
+    const money_particle = document.createElement("img");
+    money_particle.setAttribute("src", "img/silkicon_money.png")
+    money_particle.setAttribute("class", "money_particle")
+    money_particle.style.left = Math.floor(Math.random() * 520) + 20 + "px";
+    money_particle.style.top = Math.floor(Math.random() * 800) + 800 + "px";
+    money_particle.style.width ="50px";
+    money_particle.style.height = "50px";
+    money_particle.style.position = "absolute";
+    imageClicks.appendChild(money_particle);
+
+    setTimeout(() => {
+        imageClicks.removeChild(money_particle);
+    }, 10000);
+}
+
+var partmoney_timer = 10000
+
+var MoneyTime = setInterval(createParticleMoney, partmoney_timer)

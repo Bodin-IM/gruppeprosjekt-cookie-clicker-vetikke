@@ -69,8 +69,8 @@ body {
 .cdiv_tile {
     margin-top: 10px;
     top: 100px;
-    height: 15%;
-    width: 100vw;
+    height: 20%;
+    width: 50vw;
     overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
@@ -83,10 +83,16 @@ body {
     /*background-image: url('img/tile/tier1.jpg');*/
 }
 
-#cdiv_tile2 {
-    /*background-image: url('img/tile/tier2.jpg');*/
+#cdiv_tile1 img {
+    width: 5%;
+    margin: -2px;
 }
 
+#cdiv_tile2 img {
+    width: 5%;
+    margin: -2px;
+    /*background-image: url('img/tile/tier2.jpg');*/
+}
 
 .score_container {
     background-color: lightgrey;
@@ -96,6 +102,7 @@ body {
     outline: double;
     outline-width: 10px;
     outline-color: white;
+    z-index: 1;
 }
 
 .click_container {
@@ -120,6 +127,7 @@ body {
     scale: 0.5;
     animation: rotate 100s linear infinite;
     transition: all 0.1s;
+    z-index: 1;
 }
 
     #click_image:active {
@@ -167,7 +175,6 @@ body {
 
 .div_store {
     z-index: 5;
-   
     right: 0;
     top: 0;
     background-color: rgba(0, 0, 0, 0.7);
@@ -179,7 +186,6 @@ body {
     height: 100vh;
     overflow: hidden;
     overflow-y: scroll;
-
     outline: ridge;
     outline-width: 10px;
     outline-color: white;
@@ -220,6 +226,10 @@ body {
 #upgrade_tool_tier2 {
     visibility: hidden;
 }
+#hire_worker_tier2 {
+    visibility: hidden;
+}
+
 #hire_worker_tier3 {
     visibility: hidden;
 }
@@ -227,6 +237,50 @@ body {
     visibility: hidden;
 }
 
+.investment_menu {
+    transition: all 0.5s;
+    z-index: 6;
+    position: fixed;
+    background-color: rgba(40, 40, 40, 1);
+    color: white;
+    outline: groove;
+    outline-width: 10px;
+    outline-color: white;
+    padding: 0px;
+    left: 0;
+    min-width: 1000px;
+    width: 100vw;
+    padding-left: 10px;
+    bottom: -75vh;
+    max-height: 80vh;
+    min-height: 80vh;
+}
+
+
+    .investment_menu #investment_sell {
+        transition: all 0.25s;
+        background-color: transparent;
+        max-width: 20vw;
+        text-align: center;
+        outline: groove;
+        outline-width: 5px;
+        outline-color: gold;
+    }
+
+    .investment_menu #investment_sell:hover {
+        background-color: gold;
+        -webkit-box-shadow: 0 0 25px gold;
+        color: black;
+    }
+
+.investment_menu:hover {
+    bottom: 0vh;
+}
+
+    .investment_menu img {
+        max-width: 20%;
+        
+    }
 
 .particle {
 
@@ -246,5 +300,28 @@ body {
     to {
         opacity: 0;
         top: 0;
+    }
+}
+
+.money_particle {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    pointer-events: none;
+    animation: money_particle-down 4s linear forwards;
+    z-index: 0;
+}
+
+@keyframes money_particle-down {
+    from {
+        opacity: 1;
+        transform: rotate(0deg);
+        top: 0;
+    }
+
+    to {
+        opacity: 0;
+        transform: rotate(180deg);
+        top: 1;
     }
 }
