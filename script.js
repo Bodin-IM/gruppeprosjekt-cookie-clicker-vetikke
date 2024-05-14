@@ -252,3 +252,18 @@ const createParticleMoney = (x, y) => {
 var partmoney_timer = 10000
 
 var MoneyTime = setInterval(createParticleMoney, partmoney_timer)
+
+var buystock_1 = document.getElementById('buystock_1')
+
+function InvestStock_Prices() {
+    function stock1() { 
+    console.log("Stock 1: Purchased New Stock")
+
+
+    }
+
+
+
+}
+
+buystock_1.addEventListener('click', InvestStock_Prices)
