@@ -34,3 +34,15 @@
   .d-flex {
     display: flex;
   }
+
+  main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+
+  }
+
+  #gruve_img{
+    width: 200px;
+  }
