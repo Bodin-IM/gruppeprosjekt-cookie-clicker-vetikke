@@ -63,7 +63,7 @@ body {
     height: 100vh;
     width: 50vw;
     flex-direction: column;
-
+    visibility: visible;
 }
 
 .cdiv_tile {
@@ -103,10 +103,10 @@ body {
     outline-width: 10px;
     outline-color: white;
     z-index: 1;
+    visibility: visible;
 }
 
 .click_container {
-
     background-color: rgba(0, 0, 0, 0.7);
     width: 25%;
     padding: 10px;
@@ -116,9 +116,10 @@ body {
     outline: groove;
     outline-width: 10px;
     outline-color: white;
-    place-content: center;   
+    place-content: center;
     height: 100vh;
     overflow: hidden;
+    visibility: visible;
 }
 
 #click_image {
@@ -144,13 +145,14 @@ body {
         transform: rotate(360deg);
     }
 }
- 
+
 
 .upgrade_bar {
     transition: all 0.25s;
     /* animation-name: upgrade_bar_idle;
     animation-duration: 4s;
     animation-iteration-count: infinite; */
+    visibility: visible;
 }
 
 .upgrade_bar:hover {
@@ -189,6 +191,7 @@ body {
     outline: ridge;
     outline-width: 10px;
     outline-color: white;
+    visibility: visible;
 }
 
 .store_upgrades {
@@ -222,6 +225,12 @@ body {
         -webkit-box-shadow: 0 0 25px gold;
         color: black;
     }
+    
+    #nuclear_destruction:hover {
+        background-color: red;
+        -webkit-box-shadow: 0 0 25px red;
+        color: black;
+    }
 
 #upgrade_tool_tier2 {
     visibility: hidden;
@@ -236,7 +245,9 @@ body {
 #upgrade_tool_tier3 {
     visibility: hidden;
 }
-
+#nuclear_destruction {
+    visibility: hidden;
+}
 .investment_menu {
     transition: all 0.5s;
     z-index: 6;
@@ -246,37 +257,47 @@ body {
     outline: groove;
     outline-width: 10px;
     outline-color: white;
- 
     min-width: 1000px;
     width: 100vw;
-    bottom: -75vh;
-    max-height: 80vh;
-    min-height: 80vh;
-    
+    bottom: -81vh;
+    min-height: 87vh;
+    max-height: 87vh;
+    visibility: visible;
 }
     .investment_menu img {
         margin: 10px;
     }
 
-    #investment_sell {
-        transition: all 0.25s;
-        background-color: transparent;
-        max-width: 20vw;
-        text-align: center;
-        outline: groove;
-        outline-width: 5px;
-        outline-color: white;
-        left: 50%;
-    }
+#investment_sell {
+    transition: all 0.25s;
+    background-color: rgba(40, 40, 40, 1);
+    max-width: 20vw;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    outline: groove;
+    outline-width: 5px;
+    outline-color: white;
+    margin: auto;
+    
+}
 
-        #investment_sell:hover {
-            background-color: rgba(60, 60, 60, 1);
-            /* -webkit-box-shadow: 0 0 25px gold; */
-            color: gold;
+    #investment_sell:hover {
+        background-color: rgba(60, 60, 60, 1);
+        /* -webkit-box-shadow: 0 0 25px gold; */
+        color: gold;
         }
+
+
+    #investment_sell:active {
+        background-color: rgba(60, 60, 60, 1);
+        /* -webkit-box-shadow: 0 0 25px gold; */
+        color: gold;
+        transform: scale(0.95);
+    }
 
 .investment_menu:hover {
     bottom: 0vh;
+
 }
 
     .investment_menu img {
@@ -284,59 +305,130 @@ body {
         
     }
 
+.invest_bar {
+    max-height: 30%;
+    min-height: 30%;
+}
+
 #buystock_1:hover {
     transition: all 0.1s;
     color: lightgrey;
     top: 10px;
     text-shadow: 0px 4px black;
+    padding-left: 10px;
 }
 
 #buystock_2:hover {
     transition: all 0.1s;
     color: lightgrey;
     text-shadow: 0px 4px black;
+    padding-left: 10px;
 }
 
 #buystock_3:hover {
     transition: all 0.1s;
     color: lightgrey;
     text-shadow: 0px 4px black;
+    padding-left: 10px;
 }
 
 #buystock_4:hover {
     transition: all 0.1s;
     color: lightgrey;
     text-shadow: 0px 4px black;
+    padding-left: 10px;
 }
 
-
+#buystock_5:hover {
+    transition: all 0.1s;
+    color: lightgrey;
+    text-shadow: 0px 4px black;
+    padding-left: 10px;
+}
 
 
 #buystock_1:active {
     transition: all 0.1s;
-    color: cyan;
+    color: white;
     top: 10px;
-    text-shadow: 0px 4px black;
+    text-shadow: 0px 0px black;
 }
 
 #buystock_2:active {
     transition: all 0.1s;
-    color: cyan;
-    text-shadow: 0px 4px black;
+    color: white;
+    text-shadow: 0px 0px black;
 }
 
 #buystock_3:active {
     transition: all 0.1s;
-    color: cyan;
-    text-shadow: 0px 4px black;
+    color: white;
+    text-shadow: 0px 0px black;
 }
 
 #buystock_4:active {
     transition: all 0.1s;
-    color: cyan;
-    text-shadow: 0px 4px black;
+    color: white;
+    text-shadow: 0px 0px black;
+
 }
 
+#buystock_5:active {
+    transition: all 0.1s;
+    color: white;
+    text-shadow: 0px 0px black;
+}
+
+#invest_bar_col1 {
+    background: rgb(80,80,80);
+    background: linear-gradient(90deg, rgba(80,80,80,1) 0%, rgba(0,0,0,0) 80%);
+}
+
+#invest_bar_col2 {
+    background: rgb(60,60,60);
+    background: linear-gradient(90deg, rgba(60,60,60,1) 0%, rgba(0,0,0,0) 80%);
+}
+
+#invest_tier2 {
+    z-index: 7;
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    width: 100vw;
+    height: 13vh;
+    text-align: center;
+}
+
+#invest_tier3 {
+    z-index: 7;
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    width: 100vw;
+    height: 11.1vh;
+    text-align: center;
+}
+
+#invest_tier4 {
+    z-index: 7;
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    width: 100vw;
+    height: 14.1vh;
+    text-align: center;
+}
+
+#invest_tier5 {
+    z-index: 7;
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    width: 100vw;
+    height: 16vh;
+    text-align: center;
+
+}
 
 .particle {
     width: 10px;
