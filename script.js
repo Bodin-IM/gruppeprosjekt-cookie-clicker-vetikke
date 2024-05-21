@@ -44,7 +44,7 @@ var score_persec_tier3 = Math.round(0)
 const createParticle = (x, y) => {
     const imageClicks = document.querySelector(".click_container");
     const particle = document.createElement("img");
-    particle.setAttribute("src", "img/particle.png")
+    particle.setAttribute("src", "img/mining mineral dirt clump.png")
     particle.setAttribute("class", "particle")
     particle.style.left = Math.floor(Math.random() * 190) + 140 + "px";
     particle.style.top = Math.floor(Math.random() * 400) + 400 + "px";
