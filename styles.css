@@ -1,36 +1,473 @@
 body {
-    background-color: rgb(231, 231, 231);
+
+    display: flex;
+    flex-direction: row;
+
+    background-image: url("img/bg_dirt.jpeg");
+    background-size: cover;
     padding: 0%;
     margin: 0%;
-  }
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-h1 {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
 }
 
+/* SCROLL BAR copy n paste cuz why not */
 
-.click_container {
-  background-image: url("img/bg_dirt.jpg");
-  width: 25%;
-  height: 1300px;
-  padding: 10px;
-  position: relative;
-  display: flex;
-  z-index: 1;
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
 }
 
-.click_container img {
- position: absolute;
- margin: 25%;
- height: 100%;
- width: 50%;
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 0px;
+}
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: lightgrey;
+    }
+
+
+
+
+.center_div {
+    /* z-index: 2;*/
+
+    background-color: rgba(0, 0, 0, 0.4);
+    /* outline: groove;
+    outline-width: 10px;
+    outline-color: white; */
+    padding: 10px;
+    overflow: hidden;
+    margin: auto;
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 50vw;
+    flex-direction: column;
+    visibility: visible;
+}
+
+.cdiv_tile {
+    margin-top: 10px;
+    top: 100px;
+    height: 20%;
+    width: 50vw;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    outline: groove;
+    outline-width: 10px;
+    outline-color: white;
+}
+
+#cdiv_tile1 {
+    /*background-image: url('img/tile/tier1.jpg');*/
+}
+
+#cdiv_tile1 img {
+    width: 5%;
+    margin: -2px;
+}
+
+#cdiv_tile2 img {
+    width: 5%;
+    margin: -2px;
+    /*background-image: url('img/tile/tier2.jpg');*/
 }
 
 .score_container {
-  margin-left: 25%;
-  background-color: antiquewhite;
-  height: fit-content;
-  width: auto;
-  padding: 1%;
-  border-style: solid;
+    background-color: lightgrey;
+    height: fit-content;
+    width: 100%;
+    padding: 1%;
+    outline: double;
+    outline-width: 10px;
+    outline-color: white;
+    z-index: 1;
+    visibility: visible;
+}
+
+.click_container {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 25%;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    z-index: 1;
+    outline: groove;
+    outline-width: 10px;
+    outline-color: white;
+    place-content: center;
+    height: 100vh;
+    overflow: hidden;
+    visibility: visible;
+}
+
+#click_image {
+    opacity: 1;
+    position: absolute;
+    scale: 0.5;
+    animation: rotate 100s linear infinite;
+    transition: all 0.1s;
+    z-index: 1;
+}
+
+    #click_image:active {
+        scale: 0.45;
+
+    }
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.upgrade_bar {
+    transition: all 0.25s;
+    /* animation-name: upgrade_bar_idle;
+    animation-duration: 4s;
+    animation-iteration-count: infinite; */
+    visibility: visible;
+}
+
+.upgrade_bar:hover {
+    scale: 105%;
+    transition: all 0.25s;
+    /* animation-name: none; */
+}
+
+@keyframes upgrade_bar_idle {
+    0% {
+        transform: translate(0px,0px);
+    }
+
+    50% {
+        transform: translate(10px,0px);
+    }
+
+    100% {
+        transform: translate(0px,0px);
+    }
+}
+
+.div_store {
+    z-index: 5;
+    right: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    bottom: auto;
+    max-width: 23%;
+    width: 23%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    outline: ridge;
+    outline-width: 10px;
+    outline-color: white;
+    visibility: visible;
+}
+
+.store_upgrades {
+    position: relative;
+
+}
+
+    .store_upgrades img {
+        width: 10%;
+    }
+
+.upgrade_bar {
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+    .upgrade_bar:hover {
+        width: 100%;
+        background-color: rgba(250, 230, 210, 0.6);
+        
+    }
+
+    .upgrade_bar h2 {
+        padding-left: 25px;
+    }
+
+    #upgrade_tier:hover {
+        background-color: gold;
+        -webkit-box-shadow: 0 0 25px gold;
+        color: black;
+    }
+    
+    #nuclear_destruction:hover {
+        background-color: red;
+        -webkit-box-shadow: 0 0 25px red;
+        color: black;
+    }
+
+#upgrade_tool_tier2 {
+    visibility: hidden;
+}
+#hire_worker_tier2 {
+    visibility: hidden;
+}
+
+#hire_worker_tier3 {
+    visibility: hidden;
+}
+#upgrade_tool_tier3 {
+    visibility: hidden;
+}
+#nuclear_destruction {
+    visibility: hidden;
+}
+.investment_menu {
+    transition: all 0.5s;
+    z-index: 6;
+    position: fixed;
+    background-color: rgba(40, 40, 40, 1);
+    color: white;
+    outline: groove;
+    outline-width: 10px;
+    outline-color: white;
+    min-width: 1000px;
+    width: 100vw;
+    bottom: -81vh;
+    min-height: 87vh;
+    max-height: 87vh;
+    visibility: visible;
+}
+    .investment_menu img {
+        margin: 10px;
+    }
+
+#investment_sell {
+    transition: all 0.25s;
+    background-color: rgba(40, 40, 40, 1);
+    max-width: 20vw;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    outline: groove;
+    outline-width: 5px;
+    outline-color: white;
+    margin: auto;
+    
+}
+
+    #investment_sell:hover {
+        background-color: rgba(60, 60, 60, 1);
+        /* -webkit-box-shadow: 0 0 25px gold; */
+        color: gold;
+        }
+
+
+    #investment_sell:active {
+        background-color: rgba(60, 60, 60, 1);
+        /* -webkit-box-shadow: 0 0 25px gold; */
+        color: gold;
+        transform: scale(0.95);
+    }
+
+.investment_menu:hover {
+    bottom: 0vh;
+
+}
+
+    .investment_menu img {
+        max-width: 20%;
+        
+    }
+
+.invest_bar {
+    max-height: 30%;
+    min-height: 30%;
+}
+
+#buystock_1:hover {
+    transition: all 0.1s;
+    color: lightgrey;
+    top: 10px;
+    text-shadow: 0px 4px black;
+    padding-left: 10px;
+}
+
+#buystock_2:hover {
+    transition: all 0.1s;
+    color: lightgrey;
+    text-shadow: 0px 4px black;
+    padding-left: 10px;
+}
+
+#buystock_3:hover {
+    transition: all 0.1s;
+    color: lightgrey;
+    text-shadow: 0px 4px black;
+    padding-left: 10px;
+}
+
+#buystock_4:hover {
+    transition: all 0.1s;
+    color: lightgrey;
+    text-shadow: 0px 4px black;
+    padding-left: 10px;
+}
+
+#buystock_5:hover {
+    transition: all 0.1s;
+    color: lightgrey;
+    text-shadow: 0px 4px black;
+    padding-left: 10px;
+}
+
+
+#buystock_1:active {
+    transition: all 0.1s;
+    color: white;
+    top: 10px;
+    text-shadow: 0px 0px black;
+}
+
+#buystock_2:active {
+    transition: all 0.1s;
+    color: white;
+    text-shadow: 0px 0px black;
+}
+
+#buystock_3:active {
+    transition: all 0.1s;
+    color: white;
+    text-shadow: 0px 0px black;
+}
+
+#buystock_4:active {
+    transition: all 0.1s;
+    color: white;
+    text-shadow: 0px 0px black;
+
+}
+
+#buystock_5:active {
+    transition: all 0.1s;
+    color: white;
+    text-shadow: 0px 0px black;
+}
+
+#invest_bar_col1 {
+    background: rgb(80,80,80);
+    background: linear-gradient(90deg, rgba(80,80,80,1) 0%, rgba(0,0,0,0) 80%);
+}
+
+#invest_bar_col2 {
+    background: rgb(60,60,60);
+    background: linear-gradient(90deg, rgba(60,60,60,1) 0%, rgba(0,0,0,0) 80%);
+}
+
+#invest_tier2 {
+    z-index: 7;
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    width: 100vw;
+    height: 13vh;
+    text-align: center;
+}
+
+#invest_tier3 {
+    z-index: 7;
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    width: 100vw;
+    height: 11.1vh;
+    text-align: center;
+}
+
+#invest_tier4 {
+    z-index: 7;
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    width: 100vw;
+    height: 14.1vh;
+    text-align: center;
+}
+
+#invest_tier5 {
+    z-index: 7;
+    position: absolute;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    width: 100vw;
+    height: 16vh;
+    text-align: center;
+
+}
+
+.particle {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    pointer-events: none;
+    animation: particle-up 3s linear forwards;
+}
+
+@keyframes particle-up {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        top: 0;
+    }
+}
+
+.money_particle {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    pointer-events: none;
+    animation: money_particle-down 4s linear forwards;
+    z-index: 0;
+}
+
+@keyframes money_particle-down {
+    from {
+        opacity: 1;
+        transform: rotate(0deg);
+        top: 0;
+    }
+
+    to {
+        opacity: 0;
+        transform: rotate(180deg);
+        top: 1;
+    }
 }
