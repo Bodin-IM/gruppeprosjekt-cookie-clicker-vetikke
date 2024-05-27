@@ -249,51 +249,96 @@ body {
     visibility: hidden;
 }
 .investment_menu {
-    transition: all 0.5s;
+    opacity: 0;
+    font-family: Consolas;
+    transition: 0.5s;
     z-index: 6;
     position: fixed;
-    background-color: rgba(40, 40, 40, 1);
+    background-color: black;
     color: white;
-    outline: groove;
+    /*outline: groove;
     outline-width: 10px;
-    outline-color: white;
+    outline-color: white;*/
     min-width: 1000px;
     width: 100vw;
-    bottom: -81vh;
-    min-height: 87vh;
-    max-height: 87vh;
-    visibility: visible;
+    min-height: 100vh;
+    max-height: 100vh;
+    visibility: hidden;
 }
     .investment_menu img {
         margin: 10px;
     }
 
 #investment_sell {
-    transition: all 0.25s;
-    background-color: rgba(40, 40, 40, 1);
+    
     max-width: 20vw;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    outline: groove;
-    outline-width: 5px;
-    outline-color: white;
-    margin: auto;
     
+    /*outline: groove;
+    outline-width: 5px;
+    outline-color: white;*/
+    margin: auto;
+    color: limegreen;
 }
 
     #investment_sell:hover {
-        background-color: rgba(60, 60, 60, 1);
+        background-color: rgba(250, 230, 210, 0.6);
+        /*background-color: rgba(60, 60, 60, 1);*/
         /* -webkit-box-shadow: 0 0 25px gold; */
-        color: gold;
-        }
+        color: white;
+        animation: blinkhover 1s linear infinite;
+    }
 
 
     #investment_sell:active {
-        background-color: rgba(60, 60, 60, 1);
+        /*background-color: rgba(60, 60, 60, 1);*/
         /* -webkit-box-shadow: 0 0 25px gold; */
-        color: gold;
+        color: darkgrey;
         transform: scale(0.95);
     }
+
+#investment_close {
+   
+    color: limegreen;
+    max-width: 20vw;
+    text-align: center;
+    
+    /*outline: groove;
+    outline-width: 5px;
+    outline-color: white;*/
+    margin: auto;
+}
+
+    #investment_close:hover {
+
+        /*background-color: rgba(60, 60, 60, 1);*/
+        /* -webkit-box-shadow: 0 0 25px gold; */
+        color: white;
+        background-color: rgba(250, 230, 210, 0.6);
+        animation: blinkhover 1s linear infinite;
+    }
+
+
+    #investment_close:active {
+        
+        /* -webkit-box-shadow: 0 0 25px gold; */
+        color: darkgrey;
+        transform: scale(0.95);
+    }
+
+@keyframes blinkhover {
+    0% {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: rgba(250, 230, 210, 0.6);
+    }
+    100% {
+        background-color: transparent;
+    }
+
+}
 
 .investment_menu:hover {
     bottom: 0vh;
@@ -346,14 +391,6 @@ body {
     padding-left: 10px;
 }
 
-
-#buystock_1:active {
-    transition: all 0.1s;
-    color: white;
-    top: 10px;
-    text-shadow: 0px 0px black;
-}
-
 #buystock_2:active {
     transition: all 0.1s;
     color: white;
@@ -380,20 +417,22 @@ body {
 }
 
 #invest_bar_col1 {
-    background: rgb(80,80,80);
-    background: linear-gradient(90deg, rgba(80,80,80,1) 0%, rgba(0,0,0,0) 80%);
+
+    background: rgb(40,40,40);
+    background: linear-gradient(90deg, rgba(40,40,40,1) 0%, rgba(0,0,0,0) 80%);
 }
 
 #invest_bar_col2 {
-    background: rgb(60,60,60);
-    background: linear-gradient(90deg, rgba(60,60,60,1) 0%, rgba(0,0,0,0) 80%);
+ 
+    background: rgb(20,20,20);
+    background: linear-gradient(90deg, rgba(20,20,20,1) 0%, rgba(0,0,0,0) 80%);
 }
 
 #invest_tier2 {
     z-index: 7;
     position: absolute;
     background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, black 100%);
     width: 100vw;
     height: 13vh;
     text-align: center;
@@ -403,7 +442,7 @@ body {
     z-index: 7;
     position: absolute;
     background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, black 100%);
     width: 100vw;
     height: 11.1vh;
     text-align: center;
@@ -413,7 +452,7 @@ body {
     z-index: 7;
     position: absolute;
     background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, black 100%);
     width: 100vw;
     height: 14.1vh;
     text-align: center;
@@ -423,7 +462,7 @@ body {
     z-index: 7;
     position: absolute;
     background: rgb(0,0,0);
-    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, black 100%);
     width: 100vw;
     height: 16vh;
     text-align: center;
@@ -469,5 +508,28 @@ body {
         opacity: 0;
         transform: rotate(180deg);
         top: 1;
+    }
+}
+
+.SellAnim {
+    width: 10px;
+    height: 10px;
+    position: relative;
+    pointer-events: none;
+    animation: SellAnim-up 4s linear forwards;
+    z-index: 10;
+}
+
+@keyframes SellAnim-up {
+    from {
+        opacity: 1;
+        
+        
+    }
+
+    to {
+        opacity: 0;
+        
+        top: 0;
     }
 }

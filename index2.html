@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uranium Clicker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="">
+
+    <div class="click_container">
+        <div class="score_container">
+            <h1 id="score">Mined / Score: 0</h1>
+        </div>
+        <img id="click_image" src="img/dirt_512.png">
+    </div>
+
+    <div class="center_div">
+        <div class="cdiv_tile" id="cdiv_tile1">
+            <h1 style="color:white;">Row 1</h1>
+        </div>
+
+        <div class="cdiv_tile" id="cdiv_tile2">
+            <h1 style="color:white;">Row 2</h1>
+        </div>
+
+        <div class="cdiv_tile" id="cdiv_tile3">
+            <h1 style="color:white;">Row 3</h1>
+        </div>
+
+    </div>
+
+    <div class="investment_menu">
+        <h1 id="invmenu_info" style="color:white; text-align: center;">-----------⯅ Investment Stock ⯅-----------<br /> [Version: 2.3.20 - ZZLora (c) 2009]<br /><BR />Balance: Loading...</h1>
+
+        <div id="investment_sell_abcd">
+            <h1 id="investment_sell">Sell! Profit: Loading...</h1>
+            <br />
+        </div>
+        <div>
+            <h1 id="investment_close">Close Menu</h1>
+            <br />
+        </div>
+
+
+        <div class="invest_bar" id="invest_bar_col1">
+            <div id="invest_tier5">
+                <h1>Reach 'Tier V: Titanium' to unlock this stock.</h1>
+            </div>
+            <img style="width: 4%; " src="img/nuclear_destruction.svg">
+            <h2 id="buystock_5">Click to purchase one stock!<br />Stock value: Loading...</h2>
+        </div>
+        <div class="invest_bar" id="invest_bar_col2">
+            <div id="invest_tier4">
+                <h1>Reach 'Tier IV: Platium' to unlock this stock.</h1>
+            </div>
+            <img style="filter: saturate(15)" src="img/stock/lm-logo.svg">
+            <h2 id="buystock_1">Click to purchase one stock!<br />Stock value: Loading...</h2>
+        </div>
+        <div class="invest_bar" id="invest_bar_col1">
+            <div id="invest_tier3">
+                <h1>Reach 'Tier III: Iron' to unlock this stock.</h1>
+            </div>
+            <img style="filter: invert()" src="img/stock/gd-logo.svg">
+            <h2 id="buystock_2">Click to purchase one stock!<br />Stock value: Loading...</h2>
+        </div>
+        <div class="invest_bar" id="invest_bar_col2">
+            <div id="invest_tier2">
+                <h1>Reach 'Tier II: Stone' to unlock this stock.</h1>
+            </div>
+            <img style="filter: invert()" src="img/stock/nord-logo.png">
+            <h2 id="buystock_3">Click to purchase one stock!<br />Stock value: Loading...</h2>
+        </div>
+        <div class="invest_bar" id="invest_bar_col1">
+            <img style="filter: invert()" src="img/stock/lun-logo.png">
+            <h2 id="buystock_4">Click to purchase one stock!<br />Stock value: Loading...</h2>
+        </div>
+
+
+
+    </div>
+
+    <div class="div_store">
+        <h1 id="div_store_text">Store / Upgrades<br>Tier I: Dirt</h1>
+        <div class="store_upgrades">
+
+            <div class="upgrade_bar" id="open_invmenu">
+                <img src=" ">
+                <h2>Open the 'Investment' menu</h2>
+            </div>
+
+            <div class="upgrade_bar" id="upgrade_tier">
+                <img src="img/upgrade_tier.png">
+                <h2 id="upgrade_tier_text">Upgrade to Tier II: Stone<br>Cost: 5000</h2>
+            </div>
+
+            <div class="upgrade_bar" id="upgrade_tool">
+                <img src="img/upgrade_tool.png">
+                <h2 id="upgrade_tool_text">Upgrade Tool Efficiency (1)<br>Cost: 15</h2>
+            </div>
+
+            <div class="upgrade_bar" id="hire_worker">
+                <img src="img/upgrade_worker.png">
+                <h2 id="hire_worker_text">Hire Worker (0 / Second)<br>Cost: 25</h2>
+            </div>
+
+            <!-- TIER 2 UPGRADES-->
+
+            <div class="upgrade_bar" id="upgrade_tool_tier2">
+                <img src="img/upgrade_tool_tier2.png">
+                <h2 id="upgrade_tool_tier2_text">Upgrade Tool Efficiency Tier II<br>Cost: 50</h2>
+            </div>
+
+            <div class="upgrade_bar" id="hire_worker_tier2">
+                <img src="img/upgrade_worker_tier2.png">
+                <h2 id="hire_worker_tier2_text">Hire Demolition Specialist (0 / Second)<br>Cost: 75</h2>
+            </div>
+
+            <!-- TIER 3 UPGRADES-->
+
+            <div class="upgrade_bar" id="upgrade_tool_tier3">
+                <img src="img/upgrade_tool_tier3.png">
+                <h2 id="upgrade_tool_tier3_text">Upgrade Tool Efficiency Tier III<br>Cost: 50</h2>
+            </div>
+
+            <div class="upgrade_bar" id="hire_worker_tier3">
+                <img src="img/upgrade_worker_tier3.png">
+                <h2 id="hire_worker_tier3_text">Hire Worker Tier III (0 / Second)<br>Cost: 75</h2>
+            </div>
+
+            <div class="upgrade_bar" id="nuclear_destruction">
+                <img src="img/nuclear_destruction.svg">
+                <h2 id="nuclear_destruction_text">Nuclear Destruction <br>Cost: 10,000,000</h2>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -269,6 +269,12 @@ var MoneyTime = setInterval(createParticleMoney, partmoney_timer)
 
 // Investment System
 
+function infoinv() {
+    document.getElementById("invmenu_info").innerHTML = "----------- Investment Stock -----------<br /> [Version: 2.3.20 - ZZLora (c) 2009]<br /><BR />Balance: " + score + "$";
+}
+
+setInterval(infoinv, 1000)
+
 var investment_sell_text = document.getElementById('investment_sell')
 
 var buystock_1 = document.getElementById('buystock_1')
@@ -298,7 +304,7 @@ var investment_sell_amount = 0
 
 // Coooooool
 function RandomPrice() { 
-    console.log("New Prices")
+ 
     buystock_1_value = Math.floor(Math.random() * 18000) + 7300
     buystock_2_value = Math.floor(Math.random() * 2400) + 400
     buystock_3_value = Math.floor(Math.random() * 1700) + 350
@@ -311,15 +317,16 @@ function RandomPrice() {
 
     InvestStock_Prices()
 }
-
+ 
 function investment_sell_sold() {
     score = score + investment_sell_amount
-    document.getElementById("investment_sell").innerHTML = "Sell!<br />Profit: " + investment_sell_amount + "$"
+    document.getElementById("investment_sell").innerHTML = "> Sell! Profit: " + investment_sell_amount + "$"
     buystock_1_amount = 0
     buystock_2_amount = 0
     buystock_3_amount = 0
     buystock_4_amount = 0
     buystock_5_amount = 0
+ 
 }
 
 investment_sell_text.addEventListener('click', investment_sell_sold)
@@ -329,13 +336,14 @@ function InvestStock_Prices() {
     document.getElementById("buystock_1").innerHTML = "Click to purchase one stock!<br />Stock value: " + buystock_1_value + "$";
     document.getElementById("buystock_2").innerHTML = "Click to purchase one stock!<br />Stock value: " + buystock_2_value + "$";
     document.getElementById("buystock_3").innerHTML = "Click to purchase one stock!<br />Stock value: " + buystock_3_value + "$";
-    document.getElementById("buystock_4").innerHTML = "Click to purchase one stock!<br />Stock value: " + buystock_4_value + "$";
+    document.getElementById("buystock_4").innerHTML = "Click to purchase one stock!<br />Stock value: " + buystock_1_value + "$";
     document.getElementById("buystock_5").innerHTML = "Click to purchase one stock!<br />Stock value: " + buystock_5_value + "$";
-    investment_sell_text.innerHTML = "Sell!<br />Profit: " + investment_sell_amount + "$"
-}
-setInterval(RandomPrice, 2500)
+    investment_sell_text.innerHTML = "Sell! Profit: " + investment_sell_amount + "$"
 
-// Kj�p stocks
+}
+setInterval(RandomPrice, 0)
+
+// Kjøp stocks
 function stock1() { 
 
     if (score > buystock_1_value) {
@@ -391,14 +399,39 @@ buystock_3.addEventListener('click', stock3)
 buystock_4.addEventListener('click', stock4)
 buystock_5.addEventListener('click', stock5)
 
+var stock_fallrisenum = Math.round(15)
+var stock1_value = Math.round(300)
+
+ 
+
+
+function closethemenu() {
+    // All it needed was A DAMN [0] IT IN TO WORK? WHY
+    document.getElementsByClassName("investment_menu")[0].style.opacity = '0';
+    setTimeout(() => {
+        document.getElementsByClassName("investment_menu")[0].style.visibility = 'hidden';
+    }, 200);
+    
+}
+function openthemenu() {
+    document.getElementsByClassName("investment_menu")[0].style.visibility = 'visible';
+    document.getElementsByClassName("investment_menu")[0].style.opacity = '1';
+
+}
+
+document.getElementById("open_invmenu").addEventListener('click', openthemenu)
+document.getElementById("investment_close").addEventListener('click', closethemenu)
+
+
+
+
+
 function mad() {
     if (score > 10000000) {
         score == 0
-        EL_score.innerHTML = "UNKNOWN ERROR!"
         location.reload();
     }
     
 }
-
 
 document.getElementById("nuclear_destruction").addEventListener('click', mad)
